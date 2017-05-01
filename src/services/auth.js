@@ -78,10 +78,10 @@ export default {
   getCompanyData () {
     getCompanyInfo()
       .then(resp => {
-        store.dispatch('setCompany', resp.body.result)
+        store.dispatch('setCompany', resp.data.result)
       })
       .catch(err => {
-        console.log(err.body)
+        console.log(err)
       })
   }
 }

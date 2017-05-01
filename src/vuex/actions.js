@@ -13,3 +13,7 @@ export const setProfile = ({commit, dispatch}, item) => {
 export const setRoles = ({commit}, roles) => {
   commit(types.SET_USER_ROLES, roles)
 }
+
+export const setCompany = ({commit}, info) => {
+  commit(types.SET_USER_COMPANY, info)
+}

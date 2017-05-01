@@ -11,6 +11,11 @@
                     <div class="container">
                         <div class="columns">
                             <div class="column is-8 is-offset-2">
+                                <div class="notification is-danger" v-if="error">
+                                    <button class="delete" @click="error = false"></button>
+                                    There was an error, unable to sign in with those credentials.
+                                </div>
+
                                 <div class="login-form">
                                     <p class="control has-icon has-icon-right">
                                         <input v-model="email" class="input email-input" type="text" placeholder="jsmith@example.org">

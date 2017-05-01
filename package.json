@@ -20,7 +20,8 @@
     "npm": "3.10.10",
     "vue": "2.3.0",
     "vue-cordova": "0.1.2",
-    "vue-router": "^2.5.3"
+    "vue-router": "2.5.3",
+    "vuex": "2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

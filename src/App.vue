@@ -6,8 +6,10 @@
 
 <script>
 import Vue from 'vue'
+import store from 'src/vuex/store'
 
 export default {
+  store,
   methods: {
     pluginEnabled: function (pluginName) {
       return this.cordova.plugins.indexOf(pluginName) !== -1

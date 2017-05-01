@@ -1,0 +1,3 @@
+export const SET_USER_PROFILE = 'SET_USER_PROFILE'
+export const SET_USER_ROLES = 'SET_USER_ROLES'
+export const SET_USER_COMPANY = 'SET_USER_COMPANY'

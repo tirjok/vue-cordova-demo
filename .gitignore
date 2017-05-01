@@ -6,3 +6,6 @@ npm-debug.log
 # cordova stuff
 /platforms
 /plugins
+
+# php strom
+.idea

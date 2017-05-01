@@ -13,19 +13,19 @@
                             <div class="column is-8 is-offset-2">
                                 <div class="login-form">
                                     <p class="control has-icon has-icon-right">
-                                        <input class="input email-input" type="text" placeholder="jsmith@example.org">
+                                        <input v-model="email" class="input email-input" type="text" placeholder="jsmith@example.org">
                                         <span class="icon user">
                       <i class="fa fa-user"></i>
                     </span>
                                     </p>
                                     <p class="control has-icon has-icon-right">
-                                        <input class="input password-input" type="password" placeholder="Password">
+                                        <input v-model="password" class="input password-input" type="password" placeholder="Password">
                                         <span class="icon user">
                       <i class="fa fa-lock"></i>
                     </span>
                                     </p>
                                     <p class="control login">
-                                        <button class="button is-success is-large is-fullwidth has-text-centered">Login</button>
+                                        <button class="button is-success is-large is-fullwidth has-text-centered" @click="signin">Login</button>
                                     </p>
                                 </div>
                                 <div class="section forgot-password">
@@ -59,21 +59,12 @@
     },
 
     beforeMount () {
-      this.check()
+      auth.check()
     },
 
     methods: {
       signin () {
         auth.signin(this, this.email, this.password)
-      },
-
-      check () {
-        console.log(auth.loggedIn())
-        if (!auth.loggedIn()) {
-          this.loading = false
-        } else {
-          this.$router.push({name: 'dashboard'})
-        }
       }
     }
   }

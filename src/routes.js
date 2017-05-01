@@ -26,6 +26,14 @@ export default [
     component: require('src/pages/auth/login')
   },
   {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: require('src/pages/dashboard'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '*',
     redirect: '/'
   }

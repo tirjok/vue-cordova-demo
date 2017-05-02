@@ -15,12 +15,12 @@
             <input type="checkbox" id="menu-toggle" class="is-hidden"/>
 
             <div class="nav-right nav-menu">
-                <a class="nav-item" v-text="profile.name">
+                <a v-if="profile" class="nav-item" v-text="profile.name">
                     About
                 </a>
-                <a class="nav-item">
-                    Archives
-                </a>
+                <router-link :to="{ name: 'reports-dashboard' }" class="nav-item">
+                    Reports
+                </router-link>
                 <a class="nav-item" @click="signout">
                     Log-out
                 </a>

@@ -34,6 +34,16 @@ export default [
     }
   },
   {
+    path: '/reports',
+    component: require('src/pages/reports'),
+    meta: {
+      requiresAuth: true
+    },
+    children: [
+      { path: '', name: 'reports-dashboard', component: require('src/pages/reports/index') }
+    ]
+  },
+  {
     path: '*',
     redirect: '/'
   }

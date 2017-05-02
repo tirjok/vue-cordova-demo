@@ -37,6 +37,7 @@ export default {
   },
 
   signin (context, email, password) {
+    context.loading = true
     axios.post(
       'oauth/token',
       {
@@ -48,6 +49,7 @@ export default {
       }
     ).then(response => {
       context.error = false
+      context.loading = false
       window.localStorage.setItem('id_token', response.data.access_token)
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.localStorage.getItem('id_token')
 
@@ -59,6 +61,7 @@ export default {
       this.redirectTo()
     }, response => {
       context.error = true
+      context.loading = false
     })
   },
 

@@ -30,7 +30,10 @@
                     </span>
                                     </p>
                                     <p class="control login">
-                                        <button class="button is-success is-large is-fullwidth has-text-centered" @click="signin">Login</button>
+                                        <button
+                                                class="button is-success is-large is-fullwidth has-text-centered"
+                                                :class="{ 'is-loading': loading }"
+                                                @click="signin">Login</button>
                                     </p>
                                 </div>
                                 <div class="section forgot-password">
@@ -59,7 +62,7 @@
         email: null,
         password: null,
         error: false,
-        loading: true
+        loading: false
       }
     },
 

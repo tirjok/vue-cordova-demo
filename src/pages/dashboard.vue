@@ -2,58 +2,58 @@
     <div class="container is-fluid">
         <pos-nav></pos-nav>
 
-        <section class="section">
-            <div class="tile is-ancestor">
-                <a class="tile is-parent">
-                    <article class="tile is-child notification is-danger has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('low_inventory')"></p>
-                        <p class="subtitle"><i class="fa fa-battery-1"></i> LOW INVENTORY</p>
-                    </article>
-                </a>
-
-
-                <a class="tile is-parent">
-                    <article class="tile is-child notification is-primary has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('total_items')"></p>
-                        <p class="subtitle"><i class="fa fa-cubes"></i> ITEMS</p>
-                    </article>
-                </a>
-
-                <a class="tile is-parent" v-if="isAdmin">
-                    <article class="tile is-child notification is-warning has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('total_sales')"></p>
-                        <p class="subtitle"><i class="fa fa-shopping-cart"></i> TOTAL SALES</p>
-                    </article>
-                </a>
-
-                <div class="tile is-parent" v-if="isAdmin">
-                    <a
-                                 class="tile is-child notification is-info has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('total_customers')">212</p>
-                        <p class="subtitle"><i class="fa fa-users"></i> CUSTOMERS</p>
-                    </a>
+        <div class="event-timeline">
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-48x48 avatar">
+                        <img src="http://bulma.io/images/placeholders/48x48.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <h1 class="title is-4" v-text="company.business_name">
+                            Superhero Scaffolding
+                        </h1>
+                    </div>
                 </div>
+            </article>
+
+        </div>
+
+        <section style="padding-top: 50px">
+            <div class=" event-timeline">
+                <p class="event-item">
+                    <span class="icon"><i class="fa fa-cubes"></i></span>
+                    <strong class="event-item-title">ITEMS</strong>
+                    <strong class="pull-right" v-text="counts.get('total_items')">0</strong>
+                </p>
+
+                <p class="event-item">
+                    <span class="icon"><i class="fa fa-battery-1"></i></span>
+                    <strong class="event-item-title">LOW INVENTORY</strong>
+                    <strong class="pull-right" v-text="counts.get('low_inventory')">0</strong>
+                </p>
+
+                <p class="event-item" v-if="isAdmin">
+                    <span class="icon"><i class="fa fa-shopping-cart"></i></span>
+                    <strong class="event-item-title">Total Sales</strong>
+                    <strong class="pull-right" v-text="counts.get('total_sales')">0</strong>
+                </p>
+
+                <p class="event-item" v-if="counts.get('exp_inventory') > 0">
+                    <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
+                    <strong class="event-item-title">Expire Next</strong>
+                    <strong class="pull-right" v-text="counts.get('exp_inventory')">0</strong>
+                </p>
             </div>
+        </section>
 
-            <div class="tile is-ancestor">
-                <a class="tile is-parent">
-                    <article class="tile is-child notification  is-primary has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('total_receivings')"></p>
-                        <p class="subtitle"><i class="fa fa-battery-1"></i> RECEIVING</p>
-                    </article>
+        <section class="event-timeline">
+            <p class="has-text-centered" style="padding-top: 40px">
+                <a class="button is-primary is-medium is-fullwidth">
+                    Manage Plan
                 </a>
-
-
-                <a
-                        :to="{name: 'items', params: {date_from: helper.expireDate().today, date_to: helper.expireDate().next_2_week_date}}"
-                        class="tile is-parent">
-                    <article class="tile is-child notification is-danger has-text-centered stat-tile">
-                        <p class="title" v-text="counts.get('exp_inventory')"></p>
-                        <p class="subtitle"><i class="fa fa-cubes"></i> EXP NEXT</p>
-                    </article>
-                </a>
-
-            </div>
+            </p>
         </section>
     </div>
 </template>
@@ -100,6 +100,10 @@
     computed: {
       isAdmin () {
         return authHelper.isAdmin(this.$store.state.user.roles)
+      },
+
+      company () {
+        return this.$store.state.user.company
       }
     },
 
@@ -121,3 +125,18 @@
     }
   }
 </script>
+
+<style>
+    .event-timeline {
+        margin: 10px;
+    }
+    p.event-item {
+        padding: 10px 10px 10px 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .event-item-title {
+        margin: 0 15px;
+        text-transform: uppercase;
+    }
+</style>

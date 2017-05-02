@@ -3,10 +3,6 @@
         <pos-nav></pos-nav>
 
         <section class="section">
-            <h1 class="title is-3">
-                Welcome to iPOS
-            </h1>
-
             <div class="tile is-ancestor">
                 <a class="tile is-parent">
                     <article class="tile is-child notification is-danger has-text-centered stat-tile">

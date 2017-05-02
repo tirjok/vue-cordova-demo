@@ -59,4 +59,9 @@
             display: block;
         }
     }
+
+    .nav {
+        background: none;
+        padding-top: 10px;
+    }
 </style>

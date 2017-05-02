@@ -17,7 +17,6 @@
                     </div>
                 </div>
             </article>
-
         </div>
 
         <section style="padding-top: 50px">
@@ -25,25 +24,25 @@
                 <p class="event-item">
                     <span class="icon"><i class="fa fa-cubes"></i></span>
                     <strong class="event-item-title">ITEMS</strong>
-                    <strong class="pull-right" v-text="counts.get('total_items')">0</strong>
+                    <strong class="pull-right numbers" v-text="counts.get('total_items')">0</strong>
                 </p>
 
                 <p class="event-item">
                     <span class="icon"><i class="fa fa-battery-1"></i></span>
                     <strong class="event-item-title">LOW INVENTORY</strong>
-                    <strong class="pull-right" v-text="counts.get('low_inventory')">0</strong>
+                    <strong class="pull-right numbers" v-text="counts.get('low_inventory')">0</strong>
                 </p>
 
                 <p class="event-item" v-if="isAdmin">
                     <span class="icon"><i class="fa fa-shopping-cart"></i></span>
                     <strong class="event-item-title">Total Sales</strong>
-                    <strong class="pull-right" v-text="counts.get('total_sales')">0</strong>
+                    <strong class="pull-right numbers" v-text="counts.get('total_sales')">0</strong>
                 </p>
 
                 <p class="event-item" v-if="counts.get('exp_inventory') > 0">
                     <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
                     <strong class="event-item-title">Expire Next</strong>
-                    <strong class="pull-right" v-text="counts.get('exp_inventory')">0</strong>
+                    <strong class="pull-right numbers" v-text="counts.get('exp_inventory')">0</strong>
                 </p>
             </div>
         </section>
@@ -138,5 +137,18 @@
     .event-item-title {
         margin: 0 15px;
         text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    .numbers {
+        color: white;
+    }
+
+    .event-item .icon {
+        color: cornflowerblue;
+    }
+
+    .event-timeline .title {
+        color: #ffffff;
     }
 </style>

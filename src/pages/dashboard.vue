@@ -145,7 +145,7 @@
     }
 
     .event-item .icon {
-        color: cornflowerblue;
+        color: #00e7eb;
     }
 
     .event-timeline .title {

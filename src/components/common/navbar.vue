@@ -14,7 +14,7 @@
             </label>
             <input type="checkbox" id="menu-toggle" class="is-hidden"/>
 
-            <div class="nav-right nav-menu">
+            <div class="nav-right nav-menu pos-menu">
                 <a v-if="profile" class="nav-item" v-text="profile.name">
                     About
                 </a>
@@ -63,5 +63,16 @@
     .nav {
         background: none;
         padding-top: 10px;
+    }
+    .nav-toggle:hover{
+        background-color: black;
+    }
+
+    a.nav-item {
+        color: white;
+    }
+
+    div.pos-menu {
+        background-color: black;
     }
 </style>

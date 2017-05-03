@@ -24,3 +24,12 @@
     name: 'report-index'
   }
 </script>
+<style scoped>
+    .nav .container {
+        color: white;
+    }
+
+    strong {
+        color: white;
+    }
+</style>

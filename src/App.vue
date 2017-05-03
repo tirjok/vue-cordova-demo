@@ -73,12 +73,16 @@ export default {
 </script>
 <style lang="scss">
   $fa-font-path: '../node_modules/font-awesome/fonts/';
-  @import 'node_modules/font-awesome/scss/font-awesome';
+  @import '../node_modules/font-awesome/scss/font-awesome';
 
   #app {
     height: 100%;
   }
   .app-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.89)),url('https://images.unsplash.com/1/iphone-4-closeup.jpg?dpr=1&auto=format&crop=middle&fit=crop&w=1024&h=700&q=80');
+  }
+
+  .nav-toggle span {
+    background-color: #ffffff;
   }
 </style>

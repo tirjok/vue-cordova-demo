@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.vue.cordova.demo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>VueCordovaDemo</name>
+<widget id="com.ipos" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>iPOS</name>
     <description>
-        Demo app for vue-cordova NPM package
+        Point of sale by ICS Technology Limited
     </description>
-    <author email="kartsims@gmail.com">
-        Simon Tarchichi
+    <author email="abskomol@gmail.com">
+        Abu Baker Siddique
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />

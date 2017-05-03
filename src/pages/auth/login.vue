@@ -1,5 +1,6 @@
 <template>
-    <div class="login-wrapper columns">
+    <div class="container is-fluid">
+    <div class="columns">
         <div class="column is-12">
             <section class="hero is-fullheight">
                 <div class="hero-heading">
@@ -48,7 +49,8 @@
                 </div>
             </section>
         </div>
-    </div>
+    </div></div>
+
 </template>
 
 <script>
@@ -144,4 +146,9 @@
         background-color: rgba(0,0,0, 0.6);
         padding: 5px;
     }
+
+    .section, .hero, .hero-heading{
+        background-color: transparent;
+    }
+
 </style>

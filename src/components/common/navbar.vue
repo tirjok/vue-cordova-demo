@@ -3,7 +3,7 @@
         <div class="container">
             <div class="nav-left">
                 <a class="nav-item">
-                    <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
+                    <img src="../../assets/ipos-logo.png" alt="iPOS logo">
                 </a>
             </div>
 

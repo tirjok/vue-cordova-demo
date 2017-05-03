@@ -6,7 +6,7 @@
             <article class="media">
                 <figure class="media-left">
                     <p class="image is-48x48 avatar">
-                        <img src="http://bulma.io/images/placeholders/48x48.png">
+                        <img src="../assets/profile-placeholder.png">
                     </p>
                 </figure>
                 <div class="media-content">
